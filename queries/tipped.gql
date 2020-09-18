@@ -1,5 +1,12 @@
 query transactions($owner: String!, $recipient: String!) {
-  transactions(owners: [$owner], recipients: [$recipient]) {
+  transactions(
+    owners: [$owner]
+    recipients: [$recipient]
+    tags: [
+      { name: "App-Name", values: ["ArVerifyDev"] },
+      { name: "Type", values: ["tip"] },
+    ]
+  ) {
     edges {
       node {
         quantity {
@@ -9,3 +16,4 @@ query transactions($owner: String!, $recipient: String!) {
     }
   }
 }
+

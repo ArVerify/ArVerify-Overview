@@ -28,8 +28,10 @@ def tip_received(owner: str, fee: float) -> bool:
 def send_to_arweave(verified_address: str, fee: float) -> arweave.Transaction:
     # store verification on chain
     transaction = arweave.Transaction(wallet)
-    transaction.add_tag(name="AppName", value="ArVerifyDev")
-    transaction.add_tag(name="verified", value=verified_address)
+    transaction.add_tag(name="App-Name", value="ArVerifyDev")
+    transaction.add_tag(name="Type", value="verification")
+    transaction.add_tag(name="Method", value="Google")
+    transaction.add_tag(name="Address", value=verified_address)
     transaction.sign()
     _fee = transaction.get_price()
     transaction.send()
