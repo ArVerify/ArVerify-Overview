@@ -65,3 +65,12 @@ query transactions($authPosts: [String!], $address: String!) {
   }
 }
 ```
+## Help needed
+*   More architectural guidance
+*   How to implement a good tipping mechanism?
+*   How to create and interact with a DAO?
+*   New features
+
+## Ideas
+*   Adding this project into WeaveID
+*   Having a check-sign next to address to see that the address is verified (e.g instagram)
