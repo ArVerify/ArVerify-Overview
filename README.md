@@ -74,3 +74,4 @@ query transactions($authPosts: [String!], $address: String!) {
 ## Ideas
 *   Adding this project into WeaveID
 *   Having a check-sign next to address to see that the address is verified (e.g instagram)
+*   Implement more auth-provider
