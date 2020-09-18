@@ -1,0 +1,11 @@
+query transactions($owner: String!, $recipient: String!) {
+  transactions(owners: [$owner], recipients: [$recipient]) {
+    edges {
+      node {
+        quantity {
+          ar
+        }
+      }
+    }
+  }
+}
