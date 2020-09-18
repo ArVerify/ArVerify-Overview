@@ -4,7 +4,7 @@ query transactions($owner: String!, $recipient: String!) {
     recipients: [$recipient]
     tags: [
       { name: "App-Name", values: ["ArVerifyDev"] },
-      { name: "Type", values: ["tip"] },
+      { name: "Type", values: ["Tip"] },
     ]
   ) {
     edges {

@@ -17,3 +17,28 @@ If an authpost misbehaves, it will be removed from the DAO.
 6.  If the Callback is successful, the authpost writes a transaction onto arweave which states, that the address is verified
 7.  The authpost tips the DAO
 8.  The authpost returns the TX-ID of the verification TX to the user
+
+## Usage
+### Tipping to an authpost
+This is just what I came up with. I have no idea if this is a best practice.
+````python
+import arweave
+
+authpost = "..."
+
+wallet_file_path = "my-arweave-keyfile.json"
+wallet = arweave.Wallet(wallet_file_path)
+
+fee = 0.0001
+tx = arweave.Transaction(wallet, quantity=str(fee), to=authpost)
+tx.add_tag(name="App-Name", value="ArVerifyDev")
+tx.add_tag(name="Type", value="Tip")
+tx.sign()
+tx.send()
+````
+
+In future this will be implemented into a front-end application which will handle the tipping process.
+
+### Check if address is verified
+This can be done via a GraphQL Query. It can easily be implemented into some kind
+of package which can be installed into other projects.
