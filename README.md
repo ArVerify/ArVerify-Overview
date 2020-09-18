@@ -1,5 +1,7 @@
 # ArVerify
-ArVerify is service which allows users to let their addresses verified via Google Sign On.
+```Note: This is a proof of concept```
+
+ArVerify is service which allows users to have their addresses verified via Google Sign On.
 Verified users can then be queried or accessed via a SDK.
 
 ## Architecture
