@@ -29,7 +29,7 @@ def send_to_arweave(verified_address: str, fee: float) -> arweave.Transaction:
     # store verification on chain
     transaction = arweave.Transaction(wallet)
     transaction.add_tag(name="App-Name", value="ArVerifyDev")
-    transaction.add_tag(name="Type", value="verification")
+    transaction.add_tag(name="Type", value="Verification")
     transaction.add_tag(name="Method", value="Google")
     transaction.add_tag(name="Address", value=verified_address)
     transaction.sign()
