@@ -42,3 +42,26 @@ In future this will be implemented into a front-end application which will handl
 ### Check if address is verified
 This can be done via a GraphQL Query. It can easily be implemented into some kind
 of package which can be installed into other projects.
+
+```graphql
+query transactions($authPosts: [String!], $address: String!) {
+  transactions(
+    owners: $authPosts
+    tags: [
+      { name: "App-Name", values: ["ArVerifyDev"] }
+      { name: "Type", values: ["Verification"] }
+      { name: "Address", values: [$address] }
+    ]
+  ) {
+    edges {
+      node {
+        id
+        tags {
+          name
+          value
+        }
+      }
+    }
+  }
+}
+```
